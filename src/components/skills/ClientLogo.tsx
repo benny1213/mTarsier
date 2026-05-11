@@ -13,6 +13,10 @@ const COPILOT_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="
 
 const CLAUDE_CODE_SVG = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M20.998 10.949H24v3.102h-3v3.028h-1.487V20H18v-2.921h-1.487V20H15v-2.921H9V20H7.488v-2.921H6V20H4.487v-2.921H3V14.05H0V10.95h3V5h17.998v5.949zM6 10.949h1.488V8.102H6v2.847zm10.51 0H18V8.102h-1.49v2.847z" fill="#D97757" fill-rule="evenodd"/></svg>`;
 
+const TRAE_SVG = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="trae-g" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#00D4FF"/><stop offset="1" stop-color="#00FF88"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="#07120D"/><path d="M5 6.5h14v3H13.9V18h-3.8V9.5H5v-3Z" fill="url(#trae-g)"/><path d="M15.2 12.4 19 18h-4.1l-2.7-4.1 3-1.5Z" fill="#00D4FF"/></svg>`;
+
+const TRAE_CN_SVG = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="trae-cn-g" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#FFB800"/><stop offset="1" stop-color="#00FF88"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="#120B05"/><path d="M5 6.5h14v3H13.9V18h-3.8V9.5H5v-3Z" fill="url(#trae-cn-g)"/><path d="M15.2 12.4 19 18h-4.1l-2.7-4.1 3-1.5Z" fill="#FFB800"/></svg>`;
+
 const MCPORTER_SVG = `<svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="mc-g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ff4d4d"/><stop offset="100%" stop-color="#991b1b"/></linearGradient></defs><path d="M60 10 C30 10 15 35 15 55 C15 75 30 95 45 100 L45 110 L55 110 L55 100 C55 100 60 102 65 100 L65 110 L75 110 L75 100 C90 95 105 75 105 55 C105 35 90 10 60 10Z" fill="url(#mc-g)"/><path d="M20 45 C5 40 0 50 5 60 C10 70 20 65 25 55 C28 48 25 45 20 45Z" fill="url(#mc-g)"/><path d="M100 45 C115 40 120 50 115 60 C110 70 100 65 95 55 C92 48 95 45 100 45Z" fill="url(#mc-g)"/><path d="M45 15 Q35 5 30 8" stroke="#ff4d4d" stroke-width="3" stroke-linecap="round"/><path d="M75 15 Q85 5 90 8" stroke="#ff4d4d" stroke-width="3" stroke-linecap="round"/><circle cx="45" cy="35" r="6" fill="#050810"/><circle cx="75" cy="35" r="6" fill="#050810"/><circle cx="46" cy="34" r="2.5" fill="#00e5cc"/><circle cx="76" cy="34" r="2.5" fill="#00e5cc"/></svg>`;
 
 const OPENCODE_SVG = `<svg viewBox="0 0 240 300" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M180 240H60V120H180V240Z" fill="#4B4646"/><path d="M180 60H60V240H180V60ZM240 300H0V0H240V300Z" fill="#F1ECEC"/></svg>`;
@@ -26,6 +30,8 @@ function getLogoSvg(clientId: string): string | null {
   if (clientId.startsWith("claude")) return CLAUDE_SVG;
   if (clientId === "cursor") return CURSOR_SVG;
   if (clientId === "windsurf") return WINDSURF_SVG;
+  if (clientId === "trae") return TRAE_SVG;
+  if (clientId === "trae-cn") return TRAE_CN_SVG;
   if (clientId === "opencode") return OPENCODE_SVG;
   if (clientId.includes("mcpporter") || clientId.includes("mcporter")) return MCPORTER_SVG;
   if (clientId.startsWith("codex")) return CODEX_SVG;
