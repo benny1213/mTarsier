@@ -104,6 +104,9 @@ export const CLIENT_REGISTRY: ClientMeta[] = [
     isSharedFile: true,
     detection: { kind: "app_bundle", path: "/Applications/Codex.app", pathWin: "%LOCALAPPDATA%\\Programs\\Codex\\Codex.exe" },
     supportedTransports: ["stdio", "remote-mcp"],
+    supportsSkills: true,
+    skillsPath: "~/.codex/skills",
+    npxAgentId: "codex",
   },
   {
     id: "chatgpt",
@@ -285,7 +288,8 @@ export const CLIENT_REGISTRY: ClientMeta[] = [
     configFormat: "json",
     detection: { kind: "app_bundle", path: "/Applications/Trae.app", pathWin: "%LOCALAPPDATA%\\Programs\\Trae\\Trae.exe" },
     supportedTransports: ["stdio", "sse"],
-    supportsSkills: false,
+    supportsSkills: true,
+    skillsPath: "~/.trae/skills",
   },
   {
     id: "trae-cn",
@@ -299,7 +303,8 @@ export const CLIENT_REGISTRY: ClientMeta[] = [
     configFormat: "json",
     detection: { kind: "app_bundle", path: "/Applications/Trae CN.app", pathWin: "%LOCALAPPDATA%\\Programs\\Trae CN\\Trae CN.exe" },
     supportedTransports: ["stdio", "sse"],
-    supportsSkills: false,
+    supportsSkills: true,
+    skillsPath: "~/.trae-cn/skills",
   },
 ];
 

@@ -113,8 +113,8 @@ pub static REGISTRY: &[ClientDef] = &[
         detection_value: Some("/Applications/Codex.app"),
         detection_value_win: Some("%LOCALAPPDATA%\\Programs\\Codex\\Codex.exe"),
         detection_value_linux: None,
-        skills_path: None,
-        npx_agent_id: None,
+        skills_path: Some("~/.codex/skills"),
+        npx_agent_id: Some("codex"),
     },
     ClientDef {
         id: "codex-cli",
@@ -273,7 +273,7 @@ pub static REGISTRY: &[ClientDef] = &[
         detection_value: Some("/Applications/Trae.app"),
         detection_value_win: Some("%LOCALAPPDATA%\\Programs\\Trae\\Trae.exe"),
         detection_value_linux: None,
-        skills_path: None,
+        skills_path: Some("~/.trae/skills"),
         npx_agent_id: None,
     },
     ClientDef {
@@ -289,7 +289,7 @@ pub static REGISTRY: &[ClientDef] = &[
         detection_value: Some("/Applications/Trae CN.app"),
         detection_value_win: Some("%LOCALAPPDATA%\\Programs\\Trae CN\\Trae CN.exe"),
         detection_value_linux: None,
-        skills_path: None,
+        skills_path: Some("~/.trae-cn/skills"),
         npx_agent_id: None,
     },
 ];
