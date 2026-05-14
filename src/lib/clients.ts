@@ -1,6 +1,23 @@
 import type { ClientMeta, ClientType } from "../types/client";
 
 export const CLIENT_REGISTRY: ClientMeta[] = [
+  // ── Shared skill stores ──────────────────────────────────────────────────
+  {
+    id: "agent-skills-shared",
+    name: "Agent Skills (Shared)",
+    type: "Framework",
+    docsUrl: "https://agentskills.io",
+    configPath: null,
+    configPathWin: null,
+    configPathLinux: null,
+    configKey: "",
+    configFormat: "json",
+    detection: { kind: "none" },
+    supportedTransports: [],
+    supportsSkills: true,
+    skillsPath: "~/.agents/skills",
+  },
+
   // ── Anthropic ────────────────────────────────────────────────────────────
   {
     id: "claude-desktop",

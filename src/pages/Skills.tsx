@@ -201,7 +201,7 @@ function Skills() {
         />
       )}
       {copying && selectedClientId && (
-        <CopySkillDialog skill={copying} sourceClientId={selectedClientId}
+        <CopySkillDialog skill={copying} sourceClientId={(copying as InstalledSkill & { clientId?: string }).clientId ?? selectedClientId}
           onClose={() => setCopying(null)} onCopy={handleCopySkill} />
       )}
       {deleting && (

@@ -21,6 +21,22 @@ pub struct ClientDef {
 
 pub static REGISTRY: &[ClientDef] = &[
     ClientDef {
+        id: "agent-skills-shared",
+        name: "Agent Skills (Shared)",
+        client_type: "Framework",
+        config_path: None,
+        config_path_win: None,
+        config_path_linux: None,
+        config_key: "",
+        config_format: "json",
+        detection_kind: "none",
+        detection_value: None,
+        detection_value_win: None,
+        detection_value_linux: None,
+        skills_path: Some("~/.agents/skills"),
+        npx_agent_id: None,
+    },
+    ClientDef {
         id: "claude-desktop",
         name: "Claude Desktop",
         client_type: "Desktop",

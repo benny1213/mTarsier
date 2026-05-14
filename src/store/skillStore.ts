@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { invoke } from "@tauri-apps/api/core";
+import { CLIENT_REGISTRY } from "../lib/clients";
 import type { ClientMeta } from "../types/client";
 
 export interface InstalledSkill {
@@ -95,7 +96,10 @@ export const useFavoritesStore = create<FavoritesStore>((set, get) => {
 
 export function getSkillableClients(detectedClients: ClientMeta[]): ClientMeta[] {
   const seen = new Set<string>();
-  return detectedClients.filter((c) => {
+  const sharedClient = CLIENT_REGISTRY.find((c) => c.id === "agent-skills-shared");
+  const candidates = sharedClient ? [sharedClient, ...detectedClients] : detectedClients;
+
+  return candidates.filter((c) => {
     if (!c.supportsSkills || !c.skillsPath) return false;
     if (seen.has(c.skillsPath)) return false;
     seen.add(c.skillsPath);
